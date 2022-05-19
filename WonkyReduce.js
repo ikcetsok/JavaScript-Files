@@ -1,7 +1,4 @@
-/*jshint esversion:6, quotmark:false*/
-
 // The global variable
-
 const watchList = [{
     "Title": "Inception",
     "Year": "2010",
@@ -114,15 +111,20 @@ const watchList = [{
   }
 ];
 
-// Only change code below this line
+function getRating(watchList) {
+  // Only change code below this line
+  let Ratings = watchList.reduce((data, movie) => {
+    if (movie.Director == "Christopher Nolan") {
+      data.push(movie.imdbRating);
+    }
+    return data;
+  }, []);
 
-const filteredList = watchList.filter(movie => {
-  return movie.imdbRating >= 8;
-}).map(movie => ({
-  'title': movie.Title,
-  'rating': movie.imdbRating
-}));
+  let summer = Ratings.reduce((acc, current) => Number(acc) + Number(current));
 
-// Only change code above this line
+  let averageRating = summer / Ratings.length;
+  // Only change code above this line
+  return averageRating;
+}
 
-console.log(filteredList);
+console.log(getRating(watchList));
