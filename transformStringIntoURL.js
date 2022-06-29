@@ -1,6 +1,7 @@
 // Only change code below this line
 function urlSlug(title) {
   let tArr = title.split(' ');
+  console.log(tArr);
   let cleaned = tArr.filter(word => word != '');
   console.log(cleaned);
   cleaned = cleaned.map((word) => {
