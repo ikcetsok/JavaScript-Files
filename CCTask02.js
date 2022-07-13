@@ -53,6 +53,7 @@ function convertToRoman(num) {
             for (let i = 0; i < arrNum[1] - 5; i++) {
               result = 'X' + result;
             }
+
             result = 'L' + result;
           }
         }
@@ -62,35 +63,41 @@ function convertToRoman(num) {
 
   //100-900
 
-  if (arrNum[1] == 9) {
+  if (arrNum[2] == 9) {
     //console.log('up');
-    result = 'XC' + result;
+    result = 'CM' + result;
   } else {
-    if (arrNum[1] == 5) {
-      result = 'L' + result;
+    if (arrNum[2] == 5) {
+      result = 'D' + result;
     } else {
-      if (arrNum[1] == 4) {
-        result = 'XL' + result;
+      if (arrNum[2] == 4) {
+        result = 'CD' + result;
       } else {
-        if (arrNum[1] < 4) {
-          for (let i = 0; i < arrNum[1]; i++) {
-            result = 'X' + result;
+        if (arrNum[2] < 4) {
+          for (let i = 0; i < arrNum[2]; i++) {
+            result = 'C' + result;
           }
         } else {
-          if (arrNum[1] > 5) {
-            for (let i = 0; i < arrNum[1] - 5; i++) {
-              result = 'X' + result;
+          if (arrNum[2] > 5) {
+            for (let i = 0; i < arrNum[2] - 5; i++) {
+              result = 'C' + result;
             }
 
-            result = 'L' + result;
+            result = 'D' + result;
           }
         }
       }
     }
   }
 
+  //1000+
+
+  for (let i = 0; i < arrNum[3]; i++) {
+    result = 'M' + result;
+  }
+
   console.log(result);
   return (result);
 }
 
-convertToRoman(68);
+convertToRoman(668);
