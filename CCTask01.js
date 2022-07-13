@@ -2,8 +2,10 @@ function palindrome(str) {
   let subject = str.slice();
   let subArr = [];
   let clearArr = [];
-  let alpha = /\w/;
+  let alpha = /[A-Za-z0-9]/;
   let letters = /[A-Za-z]/;
+  let normal = '';
+  let backwards = '';
   for (let i = 0; i < subject.length; i++) {
     subArr.push(subject[i]);
   }
@@ -21,8 +23,18 @@ function palindrome(str) {
   }
 
   //console.log(clearArr);
+  normal = clearArr.join('');
+  console.log(normal);
+  for (let i = clearArr.length - 1; i > -1; i--) {
+    backwards = `${backwards}${clearArr[i]}`;
+  }
 
-  return true;
+  console.log(backwards);
+  if (normal == backwards) {
+    return true;
+  }
+
+  return false;
 }
 
-palindrome("Ey 1@#CARe");
+console.log(palindrome('0_0 (: /-\ :) 0-0'));
