@@ -1,7 +1,8 @@
 function checkCashRegister(price, cash, cid) {
-  let kasa = cid.map(function(arr) {
+  let kasa = cid.map(function (arr) {
     return arr.slice();
   });
+
   let reszta = (cash - price) * 100;
   reszta = reszta / 100;
   let check = reszta;
@@ -9,6 +10,7 @@ function checkCashRegister(price, cash, cid) {
   for (let i = 0; i < kasa.length; i++) {
     sumakasy = sumakasy + kasa[i][1];
   }
+
   sumakasy = sumakasy * 100;
   sumakasy = sumakasy / 100;
   let change = [
@@ -22,8 +24,8 @@ function checkCashRegister(price, cash, cid) {
     ["TWENTY", 0],
     ["ONE HUNDRED", 0]
   ];
-  let counter = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100]
-  let setki = 0
+  let counter = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100];
+  let setki = 0;
 
   console.log(reszta);
   for (let i = 8; i > -1; i--) {
@@ -44,12 +46,12 @@ function checkCashRegister(price, cash, cid) {
         change[i][1] = kasa[i][1];
         kasa[i][1] = 0;
       }
-    };
+    }
   }
+
   reszta = Math.round(reszta * 100) / 100;
   console.log(reszta);
-  console.log(change)
-
+  console.log(change);
 
   let result = [];
   for (let j = change.length - 1; j > -1; j--) {
@@ -57,6 +59,7 @@ function checkCashRegister(price, cash, cid) {
       result.push(change[j]);
     }
   }
+
   console.log(check);
   console.log(sumakasy);
 
@@ -73,6 +76,7 @@ function checkCashRegister(price, cash, cid) {
       };
     }
   }
+
   return {
     status: "OPEN",
     change: result
