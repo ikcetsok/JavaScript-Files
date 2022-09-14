@@ -4,8 +4,8 @@ function palindrome(str) {
   let clearArr = [];
   let alpha = /[A-Za-z0-9]/;
   let letters = /[A-Za-z]/;
-  let normal = '';
-  let backwards = '';
+  let normal = "";
+  let backwards = "";
   for (let i = 0; i < subject.length; i++) {
     subArr.push(subject[i]);
   }
@@ -19,11 +19,10 @@ function palindrome(str) {
         clearArr.push(subArr[i]);
       }
     }
-
   }
 
   //console.log(clearArr);
-  normal = clearArr.join('');
+  normal = clearArr.join("");
   console.log(normal);
   for (let i = clearArr.length - 1; i > -1; i--) {
     backwards = `${backwards}${clearArr[i]}`;
@@ -37,5 +36,5 @@ function palindrome(str) {
   return false;
 }
 
-console.log(palindrome('0_0 (: /-\ :) 0-0'));
-console.log('sukces');
+console.log(palindrome("0_0 (: /- :) 0-0"));
+console.log("sukces");
