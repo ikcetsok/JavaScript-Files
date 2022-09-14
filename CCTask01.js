@@ -1,9 +1,9 @@
 function palindrome(str) {
-  let subject = str.slice();
-  let subArr = [];
-  let clearArr = [];
-  let alpha = /[A-Za-z0-9]/;
-  let letters = /[A-Za-z]/;
+  const subject = str.slice();
+  const subArr = [];
+  const clearArr = [];
+  const alpha = /[A-Za-z0-9]/;
+  const letters = /[A-Za-z]/;
   let normal = "";
   let backwards = "";
   for (let i = 0; i < subject.length; i++) {
