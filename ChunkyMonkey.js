@@ -4,21 +4,17 @@ function chunkArrayInGroups(arr, size) {
   let temp = [];
 
   for (let i = 0; i < arr.length; i += size) {
-
     for (let j = i; j < i + size; j++) {
-
-      if ((arr[j + 1]) == undefined) {
+      if (arr[j + 1] == undefined) {
         temp.push(arr[j]);
         break;
       } else {
         temp.push(arr[j]);
-
       }
     }
 
     out.push(temp);
     temp = [];
-
   }
 
   return out;
